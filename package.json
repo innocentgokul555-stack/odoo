@@ -1,0 +1,20 @@
+{
+  "name": "odoo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Subscription management system: plans, subscriptions, recurring billing, payments and revenue reports in one place.",
+  "scripts": {
+    "setup": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build --prefix frontend",
+    "start": "npm start --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "seed:reset": "npm run seed --prefix backend -- --reset",
+    "seed:bulk": "npm run seed:bulk --prefix backend",
+    "test": "npm test --prefix backend && npm test --prefix frontend"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "license": "MIT"
+}

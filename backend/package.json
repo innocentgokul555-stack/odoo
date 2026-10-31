@@ -1,0 +1,27 @@
+{
+  "name": "odoo-backend",
+  "version": "1.0.0",
+  "description": "Subscription management API - plans, subscriptions, recurring billing, payments and reports",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/seed/seed.js",
+    "seed:bulk": "node src/seed/bulk.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^10.3.1"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.11.1"
+  }
+}

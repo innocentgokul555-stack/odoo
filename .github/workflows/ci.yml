@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install
+        run: |
+          npm ci --prefix backend
+          npm ci --prefix frontend
+      - name: Backend tests
+        run: npm test --prefix backend
+      - name: Build the website
+        run: npm run build --prefix frontend
+      - name: Website tests (runs the real backend)
+        run: npm test --prefix frontend

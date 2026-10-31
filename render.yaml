@@ -1,0 +1,15 @@
+# One-click hosting on Render (free plan): gives you a public link anyone can open in a browser.
+# Render reads this file when you choose "New > Blueprint" and pick your GitHub repository.
+services:
+  - type: web
+    name: odoo-subscriptions
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SEED_DEMO
+        value: "true"
+      - key: DEMO_MODE
+        value: "true"
